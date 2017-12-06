@@ -26,16 +26,21 @@ gboolean pari_UpdateImageAreas(gpointer data){
 		return 0;
 	}
 	gtk_widget_queue_draw(da1);
+	
+	da1 = GTK_WIDGET(gtk_builder_get_object(builderG, "drawingarea2"));
+	gtk_widget_queue_draw(da1);
 	return TRUE;
 }
 
 gboolean on_drawingarea1_expose_event(GtkWidget * widget, GdkEvent * event, gpointer user_data){
 	pari_PerformImageAcquisition(captureG);             //acquire new image
-	// pari_ProcessUserOperations(src_imageG, dst_imageG); // Perform here the openCV transformations
+	pari_ProcessUserOperations(src_imageG, dst_imageG); // Perform here the openCV transformations
 
 	//update the drawing area displays
 	pari_RefreshDrawingArea("drawingarea1", src_imageG);
 	pari_RefreshDrawingArea("drawingarea2", dst_imageG);
+	
 	return TRUE;
 }
 
+gboolean on_checkbutton7_toggled(GtkWidget * widget, GdkEvent * event, gpointer user_data);

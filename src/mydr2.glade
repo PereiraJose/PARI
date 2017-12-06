@@ -181,11 +181,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton1">
                     <property name="label" translatable="yes">Function1</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -197,11 +196,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton2">
                     <property name="label" translatable="yes">Function2</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -213,11 +211,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton3">
                     <property name="label" translatable="yes">Function3</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -229,11 +226,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton4">
                     <property name="label" translatable="yes">Function4</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -245,11 +241,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton5">
                     <property name="label" translatable="yes">Function5</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -261,11 +256,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton6">
                     <property name="label" translatable="yes">Function6</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -288,11 +282,10 @@
                 <child>
                   <object class="GtkCheckButton" id="checkbutton7">
                     <property name="label" translatable="yes">Special</property>
-                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="xalign">0.5</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                     <signal name="toggled" handler="on_checkbutton7_toggled" swapped="no"/>
                   </object>
@@ -489,10 +482,10 @@
             <child>
               <object class="GtkButton" id="button4">
                 <property name="label">gtk-quit</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
               </object>
@@ -505,10 +498,10 @@
             <child>
               <object class="GtkButton" id="button2">
                 <property name="label" translatable="yes">About</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="gtk_widget_show" object="aboutdialog2" swapped="yes"/>
               </object>
               <packing>

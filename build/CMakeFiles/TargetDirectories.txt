@@ -1,4 +1,0 @@
-/home/jose/Desktop/PARI/aula12/PARI/build/CMakeFiles/rebuild_cache.dir
-/home/jose/Desktop/PARI/aula12/PARI/build/CMakeFiles/cpfiles.dir
-/home/jose/Desktop/PARI/aula12/PARI/build/CMakeFiles/edit_cache.dir
-/home/jose/Desktop/PARI/aula12/PARI/build/CMakeFiles/myf.dir
