@@ -1,6 +1,6 @@
 #My CMakeLists.txt
 cmake_minimum_required (VERSION 2.8)
-project (Aula11)
+project (Aula12)
 set(PROG myf)
 
 #---------------------------------
@@ -21,7 +21,7 @@ link_directories(${GTK_LIBRARY_DIRS})
 
 target_link_libraries(${PROG} ${GTK_LIBRARIES} )
 
-#-----------------------------------------------------
+#---------------------------------------------------
 # --- add custom mtargets (and dependencies)
 add_custom_target( cpfiles
                 COMMAND cp "${PROJECT_SOURCE_DIR}/src/*.glade" "${PROJECT_BINARY_DIR}"
