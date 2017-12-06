@@ -8,7 +8,7 @@ set(PROG myf)
 #set(SOURCES src/main.c src/myf.c) 
 #alternative command for wildcards: 
 file(GLOB SOURCES "src/*.c")
-add_executable(${PROG} ${SOURCES})
+add_executable(${PROG} ${SOURCES} )
 
 #-----------------------------------------------
 #The recommended way to find packages automatically using PkgConfig
@@ -19,7 +19,15 @@ pkg_check_modules(GTK REQUIRED gtk+-3.0)
 include_directories(${GTK_INCLUDE_DIRS})
 link_directories(${GTK_LIBRARY_DIRS})
 
-target_link_libraries(${PROG} ${GTK_LIBRARIES} )
+
+find_package(OpenCV 3 REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+
+target_link_libraries(${PROG} m ${GTK_LIBRARIES} ${OpenCV_LIBS})
+#target_link_libraries(${PROG} ${GTK_LIBRARIES} ${OpenCV_INCLUDE_DIRS})
+
+
 
 #---------------------------------------------------
 # --- add custom mtargets (and dependencies)

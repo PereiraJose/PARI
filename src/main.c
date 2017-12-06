@@ -13,7 +13,6 @@
  * =====================================================================================
  */
 
-
 #include <gtk/gtk.h>
 
 #define _MAIN_C_
@@ -27,7 +26,7 @@ int main(int argc, char *argv[]){
 
 	/* load the interface after a configuration file*/
 	builderG = gtk_builder_new();
-	gtk_builder_add_from_file(builderG, "exp.glade", NULL);
+	gtk_builder_add_from_file(builderG, "mydr2.glade", NULL);
 
 	/* connect the signals in the interface */
 	gtk_builder_connect_signals(builderG, NULL);
@@ -38,10 +37,17 @@ int main(int argc, char *argv[]){
 		g_signal_connect(G_OBJECT(t), "delete_event", G_CALLBACK(pari_delete_event), NULL);
 	}
 	
-	p_InitTimer();
+	captureG = pari_StartImageAcquisition();
 	
+	g_timeout_add(30, (GSourceFunc) pari_UpdateImageAreas, (gpointer) NULL);
+	
+
 	/* start the event loop */
 	gtk_main();
+
+	cvReleaseCapture(&captureG);             //Release capture device.
+	cvReleaseImage(&dst_imageG);             //Release image (free pointer when no longer used)
+	cvReleaseImage(&src_imageG);             //Release image (free pointer when no longer used).
 
 	return 0;
 }

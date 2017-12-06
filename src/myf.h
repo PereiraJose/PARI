@@ -13,23 +13,43 @@
  * =====================================================================================
  */
 
-#include <gtk/gtk.h>
+#ifndef _MYF_H
+#define _MYF_H
 
-#define MAXFFBUFFER 1000
+#include <gtk/gtk.h>
+#include <cairo.h>
+
+#include "math.h"
+
+#include <cv.h>
+#include <highgui.h>
+#include "opencv2/videoio/videoio_c.h"
 
 #if defined (_MAIN_C_)
-	#ifndef GLOBALS_DECLARED
-	#define GLOBALS_DECLARED
-
-        GtkBuilder *builderG;
-        double xoffG=100;
-        double yoffG=120;
-    #endif
+	GtkBuilder *builderG;
+	IplImage *dst_imageG , *src_imageG;
+	CvCapture *captureG;
 #else
-        extern GtkBuilder *builderG;
-        extern double xoffG;
-        extern double yoffG;
+	extern GtkBuilder *builderG;
+	extern IplImage *dst_imageG , *src_imageG;
+	extern CvCapture *captureG;
 #endif
 
 gboolean pari_delete_event(GtkWidget * window, GdkEvent * event, gpointer data);
+CvCapture *pari_StartImageAcquisition();
+void pari_PerformImageAcquisition(CvCapture *capture);
+GdkPixbuf *pari_ConvertOpenCv2Gtk(IplImage * image, int dst_w, int dst_h);
+void pari_RefreshDrawingArea( char * widgetName, IplImage *img);
+
+void pari_UserOperationN(IplImage *src, IplImage *dst, GtkBuilder *gb, gpointer udata1, gpointer udata2);
+void pari_ProcessUserOperations(IplImage *src, IplImage *dst);
+
+// https://stackoverflow.com/questions/42918747/yolo-c-compilation-failure-with-debug-1
+int cvRound(double value);
+
+/* prototypes should be within the last lines of header */
+//#include "prototypes.h"
+
+#endif /* _MYF_H */
+
 
